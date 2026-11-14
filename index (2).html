@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ines Farah Sebian | Web Developer & Network Enthusiast</title>
+<meta name="description" content="Profil Ines Farah Sebian, mahasiswa D3 Teknologi Informasi Politeknik Negeri Madiun. Web, jaringan, dan traveling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#efe9e1; --paper:#fbf8f3; --ink:#22313f; --muted:#5f6c76; --line:#d6cdc0;
+  --terra:#b85c3f; --terra-d:#9c4a31; --sage:#7e9a8a; --sky:#a9c4d1;
+  --head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Instrument Sans','Segoe UI',system-ui,sans-serif;
+  --mono:'DM Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--sand);color:var(--ink);font-size:17px;line-height:1.7}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--head);line-height:1.05;letter-spacing:-.025em;font-weight:700}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:10;background:rgba(239,233,225,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px}
+.logo{font:700 1.2rem var(--head);text-decoration:none}
+.logo b{color:var(--terra)}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:.92rem;font-weight:500}
+.nav a{text-decoration:none;color:var(--muted);transition:color .2s}
+.nav ul a:hover{color:var(--terra)}
+
+/* hero */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.6vw,5.4rem);margin:20px 0 18px}
+.hero h1 span{color:var(--terra)}
+.role{font-weight:600;font-size:1.08rem;margin-bottom:14px}
+.sum{color:var(--muted);max-width:44ch;margin-bottom:34px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 28px;border-radius:12px;
+  background:var(--ink);color:#fff;transition:transform .2s,background .2s;margin:0 8px 10px 0}
+.btn:hover{transform:translateY(-2px);background:#17222d}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.alt:hover{background:var(--ink);color:#fff}
+
+/* tiket */
+.ticket{position:relative;background:var(--paper);border-radius:22px;padding:26px 26px 22px;transform:rotate(2deg);
+  box-shadow:0 24px 50px -24px rgba(34,49,63,.45);max-width:370px;justify-self:center;width:100%;
+  animation:fly 1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fly{from{opacity:0;transform:translateY(40px) rotate(6deg)}}
+.ticket .top{display:flex;justify-content:space-between;margin-bottom:16px}
+.ticket .pic{aspect-ratio:1/1;border-radius:14px;position:relative;overflow:hidden;background:linear-gradient(150deg,var(--sage),var(--sky));
+  display:grid;place-items:center;font:700 5rem var(--head);color:#fff}
+.ticket .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ticket .cut{display:flex;align-items:center;margin:20px -26px;position:relative}
+.ticket .cut::before,.ticket .cut::after{content:"";width:22px;height:22px;border-radius:50%;background:var(--sand);flex:none}
+.ticket .cut::before{margin-left:-11px}.ticket .cut::after{margin-right:-11px}
+.ticket .cut i{flex:1;border-top:2px dashed var(--line)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px}
+.fields div:first-child{grid-column:1/-1}
+.fields b{display:block;font:600 1rem var(--head);letter-spacing:-.01em;line-height:1.25;margin-top:2px}
+.barcode{height:36px;margin-top:20px;border-radius:2px;
+  background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 6px,transparent 6px 10px,var(--ink) 10px 13px,transparent 13px 15px)}
+
+/* section */
+section{padding:92px 0;border-top:1px solid var(--line)}
+.sh{display:flex;align-items:baseline;gap:18px;margin-bottom:44px}
+.sh h2{font-size:clamp(2rem,4.4vw,3.1rem)}
+.sh .mono{color:var(--terra)}
+
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:56px}
+.about p{margin-bottom:18px;color:#37444f}
+.cards{display:grid;gap:14px;align-content:start}
+.fact{background:var(--paper);border-radius:16px;padding:18px 22px;border:1px solid var(--line)}
+.fact b{display:block;font:600 1.1rem var(--head);margin-top:2px;letter-spacing:-.01em}
+.fact.travel{background:var(--ink);color:#eef2f4;border-color:var(--ink)}
+.fact.travel .mono{color:var(--sky)}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:72px}
+.sk{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px}
+.sk h3{font-size:1.1rem;margin-bottom:14px}
+.sk div{display:flex;flex-wrap:wrap;gap:8px}
+.sk span{font-size:.88rem;font-weight:500;padding:4px 13px;border-radius:999px;background:var(--sand)}
+
+/* rute proyek */
+.route{position:relative;margin-left:8px;padding-left:44px;border-left:2px dashed var(--line)}
+.stop{position:relative;padding-bottom:44px}
+.stop:last-child{padding-bottom:0}
+.stop::before{content:"";position:absolute;left:-55px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--sand);border:4px solid var(--terra)}
+.stop .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 28px;transition:transform .25s,box-shadow .25s}
+.stop .card:hover{transform:translateY(-4px);box-shadow:0 18px 36px -22px rgba(34,49,63,.45)}
+.stop h3{font-size:1.4rem;margin:6px 0 12px}
+.stop ul{list-style:none;margin-bottom:16px}
+.stop li{position:relative;padding-left:20px;color:var(--muted);font-size:.97rem;margin-bottom:5px}
+.stop li::before{content:"→";position:absolute;left:0;color:var(--terra)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font:500 .75rem var(--mono);color:var(--terra-d);border:1px solid var(--terra);border-radius:6px;padding:2px 10px}
+
+/* kontak */
+.contact{background:var(--ink);color:#e6ecef;border-top:none;text-align:center;padding:110px 0 48px}
+.contact .mono{color:var(--sky)}
+.contact h2{font-size:clamp(2.2rem,5.6vw,4.2rem);margin:16px 0 18px;color:#fff}
+.contact p.t{max-width:46ch;margin:0 auto 38px;color:#b4c0c8}
+.wa{display:inline-block;background:var(--terra);color:#fff;text-decoration:none;font-weight:600;font-size:1.1rem;
+  padding:20px 42px;border-radius:14px;transition:transform .2s,background .2s}
+.wa:hover{background:var(--terra-d);transform:translateY(-3px)}
+.contact small{display:block;margin-top:80px;color:#7f8f9a;font-size:.82rem}
+
+@media (max-width:860px){
+  body{font-size:16.5px}
+  .nav ul{gap:16px;font-size:.85rem}
+  .hero{padding:44px 0 60px}
+  .hero .wrap,.about{grid-template-columns:1fr;gap:44px}
+  .ticket{transform:rotate(1deg)}
+  section{padding:64px 0}
+  .skills{grid-template-columns:1fr}
+  .route{padding-left:30px}
+  .stop::before{left:-41px}
+  .stop .card{padding:22px}
+  .sh{flex-direction:column;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#">ines<b>.</b></a>
+    <ul>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#keahlian">Keahlian</a></li>
+      <li><a href="#proyek">Proyek</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="mono">Selamat datang</span>
+      <h1>Ines <span>Farah Sebian</span></h1>
+      <p class="role">Web Developer &amp; Network Enthusiast</p>
+      <p class="sum">Mahasiswa D3 Teknologi Informasi yang membangun aplikasi web, memahami jaringan dari pengalaman di perusahaan penyedia internet, dan suka menjelajahi tempat baru.</p>
+      <a class="btn" href="#kontak">Hubungi Saya</a>
+      <a class="btn alt" href="#proyek">Lihat Proyek</a>
+    </div>
+
+    <div class="ticket">
+      <div class="top"><span class="mono">Kartu Profil</span><span class="mono">IT · 2026</span></div>
+      <div class="pic">
+        I
+        <!-- GANTI: simpan foto sebagai foto.jpg di folder yang sama -->
+        <img src="foto.jpeg" alt="Foto profil Ines Farah Sebian" onerror="this.remove()">
+      </div>
+      <div class="cut"><i></i></div>
+      <div class="fields">
+        <div><span class="mono">Nama</span><b>Ines Farah Sebian</b></div>
+        <div><span class="mono">Kampus</span><b>Politeknik Negeri Madiun</b></div>
+        <div><span class="mono">Prodi</span><b>D3 Teknologi Informasi</b></div>
+        <div><span class="mono">Magang</span><b>JAGONET</b></div>
+        <div><span class="mono">Hobi</span><b>Traveling</b></div>
+      </div>
+      <div class="barcode" aria-hidden="true"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TENTANG -->
+<section id="tentang">
+  <div class="wrap">
+    <div class="sh"><span class="mono">01</span><h2>Tentang saya</h2></div>
+    <div class="about">
+      <div>
+        <p>Saya mahasiswa D3 Teknologi Informasi di Politeknik Negeri Madiun. Saya tertarik pada pengembangan web, jaringan komputer, dan cloud computing.</p>
+        <p>Pada Januari–Juni 2026 saya magang enam bulan di PT Sarana Media Cemerlang (JAGONET), penyedia layanan internet di Magetan. Saya bekerja di tiga divisi: Customer Service, Admin, dan NOC (Network Operation Center). Dari sana saya membangun sistem billing berbasis web untuk membantu pekerjaan harian tim.</p>
+        <p>Di luar kuliah, hobi saya traveling: menjelajahi tempat baru dan menemukan hal-hal yang berbeda dari rutinitas sehari-hari.</p>
+      </div>
+      <div class="cards">
+        <div class="fact"><span class="mono">Pendidikan</span><b>D3 Teknologi Informasi, Politeknik Negeri Madiun</b></div>
+        <div class="fact"><span class="mono">Pengalaman</span><b>Magang 6 bulan di ISP JAGONET</b></div>
+        <div class="fact travel"><span class="mono">Hobi</span><b>Traveling</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEAHLIAN -->
+<section id="keahlian">
+  <div class="wrap">
+    <div class="sh"><span class="mono">02</span><h2>Keahlian</h2></div>
+    <div class="skills" style="margin-bottom:0">
+      <div class="sk"><h3>Web &amp; aplikasi</h3><div><span>HTML &amp; CSS</span><span>JavaScript</span><span>PHP</span><span>Laravel</span><span>MySQL</span><span>Flutter</span><span>Firebase</span><span>REST API</span></div></div>
+      <div class="sk"><h3>Jaringan &amp; infrastruktur</h3><div><span>Dasar jaringan &amp; NOC</span><span>Docker</span><span>VirtualBox</span><span>Proxmox</span><span>Linux</span></div></div>
+      <div class="sk"><h3>Alat kerja</h3><div><span>Git &amp; GitHub</span><span>Postman</span><span>Figma</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYEK -->
+<section id="proyek">
+  <div class="wrap">
+    <div class="sh"><span class="mono">03</span><h2>Karya &amp; proyek</h2></div>
+    <div class="route">
+      <div class="stop"><div class="card">
+        <span class="mono">Januari – Juni 2026 · Magang di JAGONET</span>
+        <h3>Sistem Identifikasi Data Layanan &amp; Pembayaran</h3>
+        <ul><li>Membangun web billing ISP dengan akses multi-peran: Customer Service, Admin, dan NOC.</li><li>Mengelola modul pelanggan, layanan, tagihan, pembayaran, dan pemasukan.</li><li>Membuat kartu pelanggan ber-QR Code yang dapat diunduh, serta fitur impor dan ekspor Excel.</li></ul>
+        <div class="tags"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></div>
+      </div></div>
+      <div class="stop"><div class="card">
+        <span class="mono">Proyek Pemrograman Mobile · Rancangan</span>
+        <h3>Aplikasi Absensi Karyawan QR Code</h3>
+        <ul><li>Merancang aplikasi dengan dua peran, Karyawan dan Admin/HR.</li><li>Fitur: scan QR harian, pengajuan izin, riwayat, dan estimasi gaji.</li><li>Menyusun mockup antarmuka di Figma.</li></ul>
+        <div class="tags"><span>Flutter</span><span>Firebase</span><span>Figma</span></div>
+      </div></div>
+      <div class="stop"><div class="card">
+        <span class="mono">Praktikum DevOps &amp; Web Services</span>
+        <h3>REST API Data Karyawan</h3>
+        <ul><li>Membuat web service dengan PHP native dan MySQL di XAMPP.</li><li>Menguji endpoint dengan Postman dan mengunggah proyek ke GitHub.</li></ul>
+        <div class="tags"><span>PHP</span><span>MySQL</span><span>Postman</span></div>
+      </div></div>
+      <div class="stop"><div class="card">
+        <span class="mono">Praktikum Cloud Computing</span>
+        <h3>Web Server dengan Docker</h3>
+        <ul><li>Menyiapkan mesin virtual Linux di VirtualBox.</li><li>Menulis Dockerfile dan membangun image berbasis Apache untuk aplikasi web.</li></ul>
+        <div class="tags"><span>Docker</span><span>Apache</span><span>Linux</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK / CTA -->
+<footer class="contact" id="kontak">
+  <div class="wrap">
+    <span class="mono">Tujuan akhir</span>
+    <h2>Mari berdiskusi</h2>
+    <p class="t">Punya proyek web, kebutuhan jaringan, atau sekadar ingin bertukar cerita? Kirim pesan langsung ke WhatsApp saya.</p>
+    <a class="wa" href="https://wa.me/6285973611464?text=Halo%20Ines%2C%20saya%20melihat%20landing%20page%20Anda%20dan%20ingin%20berdiskusi."
+       target="_blank" rel="noopener">Hubungi Saya via WhatsApp</a>
+    <small>&copy; 2026 Ines Farah Sebian</small>
+  </div>
+</footer>
+
+</body>
+</html>
